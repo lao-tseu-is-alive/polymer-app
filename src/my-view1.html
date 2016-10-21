@@ -12,26 +12,59 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-view1">
-  <template>
-    <style include="shared-styles">
-      :host {
-        display: block;
+    <template>
+        <style include="shared-styles">
+            :host {
+                display: block;
 
-        padding: 10px;
-      }
-    </style>
+                padding: 10px;
+            }
+        </style>
 
-    <div class="card">
-      <div class="circle">1</div>
-      <h1>View One</h1>
-      <p>Ut labores minimum atomorum pro. Laudem tibique ut has.
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-    </div>
-  </template>
+        <div class="card">
+            <div class="circle">1</div>
+            <h1>Performance Analysis</h1>
+            <p>After folowing  the Polymer <a href="https://www.polymer-project.org/1.0/start/toolbox/set-up">
+                app tutorials</a>, I made some performance live tests</p>
+            <ul>
+                <li>
+                    Deployed to OVH <a href="https://gopolymer.trouvl.info/">https://gopolymer.trouvl.info/</a>
+                </li>
+                <li>
+                    Deployed as <a href="https://polymer-app-96b86.firebaseapp.com/">Firebase app</a> - [
+                    <a href="https://console.firebase.google.com/project/polymer-app-96b86/overview">
+                        Firebase Management console
+                    </a> ]
+                </li>
+                <li>
+                    <a href="https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fgopolymer.trouvl.info%2F&tab=mobile">
+                        Google PageSpeed Insights result
+                    </a> is <b>100 %</b> ! Waouh ! that's great !
+                </li>
 
-  <script>
-    Polymer({
-      is: 'my-view1'
-    });
-  </script>
+            </ul>
+            <p>Find more informations here :</p>
+            <ul>
+                <li><a href="https://developers.google.com/web/">Google Web dev</a> </li>
+                <li><a href="https://www.polymer-project.org/">Google Polymer</a></li>
+                <li><a href="https://elements.polymer-project.org/">Polymer Catalog</a> </li>
+                <li><a href="https://customelements.io/">Custom Elements</a> </li>
+                <li><a href="http://webcomponents.org/">WebComponents.org</a> </li>
+                <li><a href="https://codelabs.developers.google.com/?cat=Web">Google CodeLabs</a> </li>
+                <li>
+                    <a href="https://www.polymer-project.org/summit">Polymer Summit 2016</a>
+                    and <a href="https://codelabs.developers.google.com/polymer-summit-2016">corresponding CodeLabs</a>
+                </li>
+                <li><a href="https://firebase.google.com/docs/cli/">Firebase cli reference</a></li>
+
+            </ul>
+
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'my-view1'
+        });
+    </script>
 </dom-module>
