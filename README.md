@@ -1,4 +1,4 @@
-# Polymer App Toolbox - Starter Kit
+# Using Polymer App Toolbox - Starter Kit as learning base for Polymer 
 
 [![Build Status](https://travis-ci.org/PolymerElements/polymer-starter-kit.svg?branch=master)](https://travis-ci.org/PolymerElements/polymer-starter-kit)
 
@@ -17,6 +17,34 @@ The PRPL pattern, in a nutshell:
 * **Render** initial route ASAP
 * **Pre-cache** components for remaining routes
 * **Lazy-load** and progressively upgrade next routes on-demand
+
+
+### My useful links
+
+Deployed at [OVH](https://gopolymer.trouvl.info/) and as [FireBase App](https://polymer-app-96b86.firebaseapp.com)
+
+
+[Polymer Home Page](https://www.polymer-project.org/)
+[Polymer Catalog](https://elements.polymer-project.org/)
+[Custom Elements](https://customelements.io/)
+
+[Polymer 1.0 properties](https://www.polymer-project.org/1.0/docs/devguide/properties)
+[Polymer 1.0 events](https://www.polymer-project.org/1.0/docs/devguide/events)
+
+https://github.com/lukehoban/es6features
+
+
+[Codelabs from Polymer Summit 2016](https://codelabs.developers.google.com/polymer-summit-2016)
+
+[Atom Editor](https://atom.io/)
+[Polymer ide plugin for Atom](https://github.com/Polymer/atom-plugin)
+[VS CODE editor](https://code.visualstudio.com/)
+[Polymer ide plugin for VS CODE](https://github.com/Polymer/vscode-plugin)
+
+Both are based on https://github.com/Polymer/polymer-editor-service and https://github.com/Polymer/polymer-analyzer
+discussed in this session : [What's New in Polymer Tools](https://www.youtube.com/watch?v=guYHn0P8bKQ) 
+from [Polymer Summit 2016](https://www.youtube.com/playlist?list=PLNYkxOF6rcICc687SxHQRuo9TVNOJelSZ)
+
 
 ### Migrating from Polymer Starter Kit v1?
 
