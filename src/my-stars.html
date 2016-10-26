@@ -1,0 +1,64 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+
+<dom-module id="my-stars">
+    <template id="my-stars-template">
+      <style media="screen">
+        :host{
+          --my-stars-font-size: 1.1;
+          display: block;
+          padding: 2px;
+          font-size: calc(var(--my-stars-font-size) * 1em);
+        }
+        :host span{
+          color:  var(--my-stars-color, blue);
+          cursor: pointer;
+        }
+      </style>
+      <!-- local DOM for my element filled with empty stars -->
+      <span id=stars on-tap='ontap' title="[[numStars]] stars out of  [[maxStars]]"></span>
+    </template>
+    <script>
+      //my element registration
+      Polymer({
+        is: 'my-stars',
+        ready: function(){
+          this.update_text();
+          //be careful with this one as it is invoked with this set to custom element instance
+          //this.listen(this.$.stars,'tap','ontap')
+        },
+        ontap: function(e){
+          //console.log(e);
+          var bb = this.$.stars.getBoundingClientRect();
+          var char_size = bb.width / this.$.stars.textContent.length;
+          this.numStars = Math.round((e.detail.x  - Math.round(char_size/2) - bb.left)/ char_size)+1;
+          this.update_text();
+        },
+        update_text: function(){
+          if (this.maxStars >20){
+            this.maxStars=20;
+            console.log('the max-stars value of ' + this.maxStars + ' is bigger then 20 (max allowed), so it will be reset to 20');
+          }
+          if (this.numStars >this.maxStars){this.numStars=this.maxStars;}
+          this.$.stars.textContent= Array(this.numStars+1).join('★')+Array(this.maxStars -this.numStars+1).join('☆');
+        },
+
+        //addin some properties
+        properties: {
+          numStars: {
+            type: Number,
+            value: 1,
+            notify: true,
+            reflectToAttribute: true
+          },
+          maxStars: {
+            type: Number,
+            value: 5,
+            notify: true,
+            reflectToAttribute: true
+          }
+        }
+      })
+    </script>
+</dom-module>

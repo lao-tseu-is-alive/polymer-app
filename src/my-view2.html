@@ -1,14 +1,6 @@
-<!--
-@license
-Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/google-map/google-map.html">
+<link rel="import" href="../bower_components/google-map/google-map-marker.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-view2">
@@ -19,13 +11,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         padding: 10px;
       }
+      google-map{
+        height: 480px;
+        width: 100%;
+      }
     </style>
 
     <div class="card">
       <div class="circle">2</div>
-      <h1>View Two</h1>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
-      <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
+      <h1>Using google-map web component</h1>
+      <p>This is an example of using the <a href="https://elements.polymer-project.org/elements/google-map">
+      google-map web component</a> inside another webcomponent </p>
+      <google-map longitude="6.6" latitude="46.5" zoom="12" api-key="AIzaSyCI_W1Ca7OvxqNFQySN--fYqvRc1Maq-8U">
+        <google-map-marker longitude="6.65" latitude="46.53" draggable="true">Welcome to Lausanne</google-map-marker>
+      </google-map>
     </div>
   </template>
 

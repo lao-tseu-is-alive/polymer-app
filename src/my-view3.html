@@ -1,31 +1,40 @@
-<!--
-@license
-Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="shared-styles.html">
+<link rel="import" href="my-stars.html">
 
 <dom-module id="my-view3">
   <template>
     <style include="shared-styles">
       :host {
         display: block;
-
         padding: 10px;
+      }
+      my-stars {
+        --my-stars-color : magenta;
+        --my-stars-font-size: 1.8;
+        color: red;
+      }
+      ul my-stars {
+        --my-stars-color : #ff0000;
+        --my-stars-font-size: 1.1;
       }
     </style>
 
     <div class="card">
-      <div class="circle">3</div>
-      <h1>View Three</h1>
-      <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
+      <h1>My first custom "star" element</h1>
+      <p>let's say you want to give some stars to Polymer :
+        <!-- max-stars bigger then 20 will be set to 20 -->
+        <my-stars  num-stars="280" max-stars=7000000></my-stars>
+        vs Angular2 :
+        <my-stars  num-stars="1" max-stars=7000000></my-stars>
+      </p>
+      <p>Give some stars to your prefered language:
+        <ul>
+            <li>Javascript<my-stars></my-stars></li>
+            <li>Python<my-stars></my-stars></li>
+            <li>Ruby<my-stars></my-stars></li>
+        </ul>
+      </p>
     </div>
   </template>
 

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,  user-scalable=yes">
+    <title>html5 test </title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Roboto', 'Noto', sans-serif;
+        font-size: 1.5em;
+        line-height: 1.5em;
+        min-height: 100vh;
+        background-color: #eeeeee;
+      }
+      #box{
+        position: absolute;
+        z-index: 10;
+        border: 1px solid;
+        background-color: yellow;
+        opacity: 0.5;
+        top: 0px;
+        left: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Get character under click inside a span or paragraph</h2>
+    Let's try first with stars :<span id=stars>★★☆☆☆☆☆☆</span></br>
+    <span id="star_number"></span>
+    <div id=box></div>
+    <p id='text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie lacus ut mi ornare, quis pretium justo tempor. Nam ac purus eu justo ultricies sodales non vel dui. In hac habitasse platea dictumst. Mauris eget tincidunt eros. Cras scelerisque tincidunt dolor. Vestibulum ac mattis diam. Nam euismod quam ultrices nisi viverra vehicula. Nam sed dui quis nisi efficitur sollicitudin ut sit amet dui. Quisque sodales ex eget ante dapibus mollis. Donec sagittis sed enim ut efficitur. Vivamus consequat iaculis justo, eget molestie elit fermentum vitae.</p>
+    </br>
+    <span id="char_picked"></span>
+    <script>
+      var mystars= document.getElementById('stars');
+      var mybox= document.getElementById('box');
+      var mytext=document.getElementById('text');
+      mystars.addEventListener('click', function(e){
+        var bb = mystars.getBoundingClientRect();
+        var char_size = bb.width / mystars.textContent.length;
+        numStars = Math.round((e.clientX   - Math.round(char_size/2) - bb.left)/ char_size)+1;
+        mystars.textContent= Array(numStars+1).join('★')+Array(mystars.textContent.length - numStars+1).join('☆');
+        document.getElementById('star_number').textContent = 'You picked the star number ' + numStars;
+        display_cursor(mystars.offsetTop, bb.left + (char_size * (numStars-1)), char_size, bb.height );
+      })
+      mytext.addEventListener('click', function(e){
+        var bb = mytext.getBoundingClientRect();
+        var char_size = bb.width / mytext.textContent.length;
+        numChar = Math.round((e.clientX   - Math.round(char_size/2) - bb.left)/ char_size)+1;
+        document.getElementById('char_picked').textContent = 'You picked the star number ' + numChar;
+        display_cursor(mytext.offsetTop, bb.left + (char_size * (numChar-1)), char_size, bb.height );
+      })
+      function display_cursor(top,left,width,height){
+        mybox.style.width = width + 'px';
+        mybox.style.top = top + 'px';
+        mybox.style.height = height+ 'px';
+        mybox.style.left= left + 'px';
+      }
+    </script>
+  </body>
+</html>
